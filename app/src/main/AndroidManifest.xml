@@ -9,6 +9,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TODO" />
+        android:theme="@style/Theme.TODO">
+        <activity android:name=".Layout_faragment_container"></activity>
+    </application>
 
 </manifest>
