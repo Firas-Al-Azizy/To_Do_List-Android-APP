@@ -125,8 +125,9 @@ recyclerView.setAdapter(adapter);
         }
         return super.onContextItemSelected(item);
     }
-
+// Delete Task
     private void deleteTask(String key) {
+        todoDB.child(key).removeValue();
     }
 // update Dialog
     private void showUpdateDialog(String key, ToDo item) {
@@ -190,6 +191,10 @@ recyclerView.setAdapter(adapter);
             case R.id.dark_mode_switch:
                 Toast.makeText(this,"Sub Item 1 is selected",Toast.LENGTH_SHORT).show();
                 return true;
+            case R.id.delete_all:
+                todoDB.removeValue();
+                Toast.makeText(this,"All Tasks are Deleted",Toast.LENGTH_SHORT).show();
+
             default:return super.onOptionsItemSelected(menuItem);
         }
 
