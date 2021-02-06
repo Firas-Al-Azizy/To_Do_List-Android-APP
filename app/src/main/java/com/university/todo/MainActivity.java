@@ -5,23 +5,18 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-    // private RecyclerView recyclerView;
-    private FloatingActionButton floatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-private   Intent menint;
+    private RecyclerView recyclerView;
+    private FloatingActionButton floatingActionButton;
+    private   Intent menint;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener fireAuthListener;
     @Override
@@ -29,7 +24,7 @@ private   Intent menint;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //recyclerView=findViewById(R.id.recycl_view);
+        recyclerView=findViewById(R.id.recycl_view);
         floatingActionButton = findViewById(R.id.floatingActionButton);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +34,7 @@ private   Intent menint;
             }
         });
 
-//      
+//    Authentication
 
         firebaseAuth = FirebaseAuth.getInstance();
 
