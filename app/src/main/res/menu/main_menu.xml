@@ -7,17 +7,6 @@
         android:id="@+id/accsettings"
         android:title="@string/account_settings" />
     <item
-        android:id="@+id/theme"
-        android:title="@string/theme">
-        <menu>
-            <item
-                android:id="@+id/dark_mode_switch"
-                android:title="@string/theme_switch"
-                app:actionLayout="@layout/switch_item"
-                app:showAsAction="always" />
-        </menu>
-    </item>
-    <item
         android:id="@+id/delete_all"
         android:title="Delete All Tasks"
         app:showAsAction="never"/>

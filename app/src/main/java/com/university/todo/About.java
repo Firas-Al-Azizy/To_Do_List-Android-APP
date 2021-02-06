@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,12 +36,6 @@ public class About extends AppCompatActivity {
                 menint = new Intent(this,AccountSettings.class);
                 startActivity(menint);
                 finish();
-                return true;
-            case R.id.theme:
-                Toast.makeText(this,"Item 3 is selected",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.dark_mode_switch:
-                Toast.makeText(this,"Sub Item 1 is selected",Toast.LENGTH_SHORT).show();
                 return true;
             default:return super.onOptionsItemSelected(menuItem);
         }
