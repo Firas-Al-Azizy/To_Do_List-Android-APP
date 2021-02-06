@@ -1,17 +1,27 @@
 package com.university.todo;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.university.todo.Models.ToDo;
+import com.university.todo.ViewHolder.ToDoViewHolder;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -19,12 +29,24 @@ public class MainActivity extends AppCompatActivity {
     private   Intent menint;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener fireAuthListener;
+    //Firebase
+    FirebaseDatabase database;
+    DatabaseReference todoDB;
+    FirebaseRecyclerOptions<ToDo> options ;
+    FirebaseRecyclerAdapter<ToDo, ToDoViewHolder> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Firebase
+        database=FirebaseDatabase.getInstance() ;
+        todoDB=database.getReference("ToDo");
+        //recyclerView
         recyclerView=findViewById(R.id.recycl_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        showTask();
+        //floatingActionButton
         floatingActionButton = findViewById(R.id.floatingActionButton);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +75,40 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+    }
+
+    private void showTask() {
+        options= new FirebaseRecyclerOptions.Builder<ToDo>()
+                .setQuery(todoDB,ToDo.class)
+                .build();
+        adapter=new FirebaseRecyclerAdapter<ToDo, ToDoViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull ToDoViewHolder holder, int position, @NonNull ToDo model) {
+                holder.text_task.setText(model.getTask());
+                holder.text_priority.setText(model.getPriority());
+            }
+
+            @NonNull
+            @Override
+            public ToDoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View itemView = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.todo_row,parent,false);
+                return new ToDoViewHolder(itemView);
+            }
+        };
+recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
     @Override
