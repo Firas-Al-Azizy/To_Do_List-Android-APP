@@ -17,6 +17,7 @@
         <activity android:name=".InputActivity"></activity>
         <activity android:name=".MainActivity" 
         android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"/>
+        <activity android:name=".About"></activity>
         <activity
             android:name=".SignupActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
