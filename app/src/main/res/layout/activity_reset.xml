@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     tools:context=".ResetActivity">
 
@@ -31,7 +31,7 @@
             android:padding="10dp"
             android:text="@string/lbl_forgot_password"
             android:textSize="20sp"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/holo_blue_dark"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
             android:gravity="center_horizontal"
             android:padding="@dimen/activity_horizontal_margin"
             android:text="@string/forgot_password_msg"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/holo_blue_dark"
             android:textSize="14dp" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -51,12 +51,12 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 android:hint="@string/hint_email"
                 android:inputType="textEmailAddress"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@android:color/holo_blue_dark" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -64,9 +64,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-            android:background="@color/colorAccent"
+            android:background="@color/colorPrimaryDark"
             android:text="@string/btn_reset_password"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btn_back"

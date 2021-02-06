@@ -20,7 +20,8 @@
         android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:textColor="#0097A7" />
 
     <EditText
         android:id="@+id/new_email"
@@ -29,7 +30,8 @@
         android:hint="@string/hint_new_email"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:textColor="#0097A7" />
 
     <EditText
         android:id="@+id/password"
@@ -41,7 +43,8 @@
         android:imeOptions="actionUnspecified"
         android:inputType="textPassword"
         android:maxLines="1"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:textColor="#0097A7" />
 
     <EditText
         android:id="@+id/newPassword"
@@ -53,15 +56,16 @@
         android:imeOptions="actionUnspecified"
         android:inputType="textPassword"
         android:maxLines="1"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:textColor="#0097A7" />
 
     <Button
         android:id="@+id/changeEmail"
-        style="?android:textAppearanceSmall"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:text="@string/btn_change"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
@@ -72,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:text="@string/btn_change"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
@@ -83,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:text="@string/btn_send"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
@@ -100,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:text="@string/btn_remove"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
@@ -111,7 +115,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
         android:text="@string/change_email"
+        android:textColor="#0097A7"
         android:textStyle="bold" />
 
     <Button
@@ -120,7 +126,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
         android:text="@string/change_password"
+        android:textColor="#0097A7"
         android:textStyle="bold" />
 
     <Button
@@ -129,7 +137,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
         android:text="@string/send_password_reset_email"
+        android:textColor="#0097A7"
         android:textStyle="bold" />
 
     <Button
@@ -138,7 +148,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
         android:text="@string/remove_user"
+        android:textColor="#0097A7"
         android:textStyle="bold" />
 
     <Button
