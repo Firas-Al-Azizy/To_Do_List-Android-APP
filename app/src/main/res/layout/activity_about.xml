@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center|center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/aboutImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#0097A7"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/aboutVersionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="@string/app_version"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="@string/made_by"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="@string/contact_us"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/aboutContactus1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:autoLink="web"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:linksClickable="true"
+        android:text="@string/github_addres1"
+        android:textColor="@color/colorAccent"
+        android:textColorLink="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/aboutContactus2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:autoLink="web"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:linksClickable="true"
+        android:text="@string/github_addres2"
+        android:textColor="@color/colorAccent"
+        android:textColorLink="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+</LinearLayout>

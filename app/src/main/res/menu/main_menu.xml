@@ -1,0 +1,14 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/about"
+        android:title="@string/about" />
+    <item
+        android:id="@+id/accsettings"
+        android:title="@string/account_settings" />
+    <item
+        android:id="@+id/delete_all"
+        android:title="Delete All Tasks"
+        app:showAsAction="never"/>
+
+</menu>
