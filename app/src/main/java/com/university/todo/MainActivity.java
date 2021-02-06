@@ -1,8 +1,11 @@
 package com.university.todo;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import com.google.firebase.auth.FirebaseAuth;
@@ -109,6 +113,57 @@ recyclerView.setAdapter(adapter);
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        
+        if (item.getTitle().equals("Update")){
+            showUpdateDialog(adapter.getRef(item.getOrder()).getKey(),adapter.getItem(item.getOrder()));
+        }else if (item.getTitle().equals("Delete")){
+            deleteTask(adapter.getRef(item.getOrder()).getKey());
+        }
+        return super.onContextItemSelected(item);
+    }
+
+    private void deleteTask(String key) {
+    }
+// update Dialog
+    private void showUpdateDialog(String key, ToDo item) {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setTitle("Update");
+        builder.setMessage("Please Update this Field");
+
+        View update_layout = LayoutInflater.from(this).inflate(R.layout.custom_layout,null);
+
+        final EditText edit_update_task=update_layout.findViewById(R.id.edit_update_task);
+        final EditText edit_update_priority=update_layout.findViewById(R.id.edit_update_priority);
+
+        edit_update_task.setText(item.getTask());
+        edit_update_priority.setText(item.getPriority());
+
+        builder.setView(update_layout);
+        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String task=edit_update_task.getText().toString();
+                String priority=edit_update_priority.getText().toString();
+
+                ToDo toDo =new ToDo(task,priority);
+                todoDB.child(key).setValue(toDo);
+
+                Toast.makeText(MainActivity.this, "Task updated successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+
     }
 
     @Override
