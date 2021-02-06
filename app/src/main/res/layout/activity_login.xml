@@ -89,6 +89,13 @@
             android:textColor="@color/white"
             android:textSize="15dp" />
 
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/google_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
     </LinearLayout>
 
     <ProgressBar
