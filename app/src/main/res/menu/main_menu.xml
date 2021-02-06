@@ -17,4 +17,9 @@
                 app:showAsAction="always" />
         </menu>
     </item>
+    <item
+        android:id="@+id/delete_all"
+        android:title="Delete All Tasks"
+        app:showAsAction="never"/>
+
 </menu>
