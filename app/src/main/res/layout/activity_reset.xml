@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     tools:context=".ResetActivity">
 
@@ -31,7 +31,7 @@
             android:padding="10dp"
             android:text="@string/lbl_forgot_password"
             android:textSize="20sp"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/primary_text_dark"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
             android:gravity="center_horizontal"
             android:padding="@dimen/activity_horizontal_margin"
             android:text="@string/forgot_password_msg"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/primary_text_dark"
             android:textSize="14dp" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -55,8 +55,8 @@
                 android:layout_marginTop="20dp"
                 android:hint="@string/hint_email"
                 android:inputType="textEmailAddress"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@android:color/primary_text_dark"
+                android:textColorHint="@android:color/primary_text_light" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
