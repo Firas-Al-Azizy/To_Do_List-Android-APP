@@ -2,6 +2,9 @@ package com.university.todo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AccountSettings extends AppCompatActivity {
-
+    private   Intent menint;
     @BindView(R.id.old_email)
     EditText oldEmail;
     @BindView(R.id.new_email)
@@ -56,7 +59,7 @@ public class AccountSettings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_account_settings);
         ButterKnife.bind(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -278,5 +281,36 @@ public class AccountSettings extends AppCompatActivity {
         if(fireAuthListener != null){
             firebaseAuth.removeAuthStateListener(fireAuthListener);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.accsettings_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.main:
+                menint = new Intent(this,MainActivity.class);
+                startActivity(menint);
+                finish();
+                return true;
+            case R.id.about:
+                menint = new Intent(this,About.class);
+                startActivity(menint);
+                finish();
+                return true;
+            case R.id.theme:
+                Toast.makeText(this,"Item 3 is selected",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.dark_mode_switch:
+                Toast.makeText(this,"Sub Item 1 is selected",Toast.LENGTH_SHORT).show();
+                return true;
+            default:return super.onOptionsItemSelected(menuItem);
+        }
+
     }
 }
