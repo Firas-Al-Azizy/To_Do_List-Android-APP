@@ -1,5 +1,0 @@
-<!--res/values/integers.xml-->
-<resources>
-    <item type="integer" name="LoginImeActionId" format="integer">100</item>
-
-</resources>
