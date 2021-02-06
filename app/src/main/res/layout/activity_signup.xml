@@ -34,7 +34,7 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:textColor="@color/colorPrimary" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -52,7 +52,7 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:textColor="@color/colorPrimary" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

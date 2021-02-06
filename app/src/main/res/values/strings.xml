@@ -34,7 +34,7 @@
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="app_version">1.0.0</string>
     <string name="made_by">Made By Firas and Heba</string>
-    <string name="contact_us">You Can Contact Us at</string>
+    <string name="contact_us">You Can Reach Us at</string>
     <string name="github_addres1">https://github.com/Firas-Al-Azizy</string>
     <string name="github_addres2">https://github.com/HebaFayad</string>
 </resources>
