@@ -24,7 +24,7 @@
     <string name="title_activity_reset_password">ResetPasswordActivity</string>
     <string name="btn_forgot_password">Forgot your password?</string>
     <string name="btn_reset_password">Reset Password</string>
-    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="btn_back">Back</string>
     <string name="hint_new_email">New Email</string>
     <string name="btn_change">Change</string>
     <string name="btn_send">Send</string>
@@ -32,4 +32,9 @@
     <string name="btn_sign_out">Sign Out</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="app_version">1.0.0</string>
+    <string name="made_by">Made By Firas and Heba</string>
+    <string name="contact_us">You Can Contact Us at</string>
+    <string name="github_addres1">https://github.com/Firas-Al-Azizy</string>
+    <string name="github_addres2">https://github.com/HebaFayad</string>
 </resources>
