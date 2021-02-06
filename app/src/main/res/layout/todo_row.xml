@@ -16,12 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Task"
+        android:textColor="@color/colorPrimary"
         style="@style/TextAppearance.AppCompat.Headline"/>
     <TextView
         android:id="@+id/text_priority"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="1"
+        android:textColor="@color/colorAccent"
         style="@style/TextAppearance.AppCompat.Body1"/>
 
 </LinearLayout>

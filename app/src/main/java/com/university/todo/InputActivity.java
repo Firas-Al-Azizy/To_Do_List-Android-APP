@@ -52,8 +52,7 @@ private Button btn_add;
                 @Override
                 public void onSuccess(Void aVoid) {
                     Toast.makeText(InputActivity.this, "Task added Successfully", Toast.LENGTH_SHORT).show();
-                    edit_task.setText(" ");
-                    edit_priority.setText(" ");
+
                     Intent intent=new Intent(InputActivity.this,MainActivity.class);
                     startActivity(intent);
                 }
