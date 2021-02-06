@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TODO">
-        <activity android:name=".Layout_faragment_container"></activity>
+        <activity android:name=".AddToDoActivity"></activity>
+        <activity android:name=".Layout_faragment_container" />
     </application>
 
 </manifest>
