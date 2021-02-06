@@ -3,6 +3,7 @@ package com.university.todo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -53,6 +54,8 @@ private Button btn_add;
                     Toast.makeText(InputActivity.this, "Task added Successfully", Toast.LENGTH_SHORT).show();
                     edit_task.setText(" ");
                     edit_priority.setText(" ");
+                    Intent intent=new Intent(InputActivity.this,MainActivity.class);
+                    startActivity(intent);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
